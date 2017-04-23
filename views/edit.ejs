@@ -1,0 +1,11 @@
+<%include partials/header %>
+
+<h2>edit <%=post.title%></h2>
+<form action="/index/<%=post._id%>?_method=PUT" method="post">
+    <input type="text" name="post[title]" value="<%=post.title%>" required>
+    <input type="text" name="post[content]" value="<%=post.content%>" required>
+    <input type="text" name="post[image]" value="<%=post.image%>">
+    <input type="submit" value="Post">
+</form>
+
+<%include partials/footer %>

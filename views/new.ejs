@@ -1,0 +1,11 @@
+<%include partials/header %>
+
+<h2>Add new post</h2>
+<form action="/index" method="post">
+    <input type="text" name="post[title]" placeholder="Title" required>
+    <input type="text" name="post[content]" placeholder="Post content" required>
+    <input type="text" name="post[image]" placeholder="image url (optional)">
+    <input type="submit" value="Post">
+</form>
+
+<%include partials/footer %>

@@ -11,7 +11,7 @@ var express = require("express"),
     User = require("./models/user"),
     Comment = require("./models/comment");
 
-mongoose.connect("mongodb://localhost/demo");
+mongoose.connect(process.env.DATABASEURL);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));

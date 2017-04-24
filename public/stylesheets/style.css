@@ -1,0 +1,154 @@
+* {
+    background: rgb(52, 73, 94);
+    color: rgb(236, 240, 241)
+}
+
+body {
+    padding-top: 50px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.background {
+    width: 100%;
+}
+
+h1 {
+    color: rgb(236, 240, 241)
+}
+
+.title {
+    text-transform: capitalize;
+    color: rgb(236, 240, 241);
+    font-weight: bold;
+}
+
+.top {
+    border-left: 7px solid #bdc3c7;
+    padding-left: 5px;
+}
+
+.thumbnail {
+    padding: 0;
+    border: none;
+}
+
+.thumbnail:hover {
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+div.thumbnail img {
+    width: 100%;
+}
+
+.post,
+.comment {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+    padding: 20px;
+    background: rgb(44, 62, 80);
+}
+
+.caption p,
+.caption em {
+    background: none;
+    color: rgb(236, 240, 241);
+}
+
+.thumbnail form,
+.comments form {
+    display: inline;
+}
+
+
+/*
+.comments p span {
+    font-weight: normal;
+    font-size: 16px;
+}
+*/
+
+.comments {
+    padding: 20px;
+}
+
+.comments .comment {
+    padding: 20px;
+}
+
+.comments-counter {
+    color: #b1b1b1;
+}
+
+.comments p a {
+    color: rgb(236, 240, 241);
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.form {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar-default {
+    background: rgb(44, 62, 80);
+    border-bottom: rgba(0, 0, 0, 0.1)
+}
+
+.navbar-default .navbar-collapse,
+.navbar-nav>li,
+.navbar>.container .navbar-brand,
+.navbar>.container-fluid .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    background: rgb(44, 62, 80);
+    color: rgb(189, 195, 199);
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(236, 240, 241);    
+}
+a {
+    color: rgb(236, 240, 241);
+}
+a:hover {
+    color: rgb(149, 165, 166);
+}
+
+.navbar>.container .navbar-brand {
+    font-family: 'Ranga', cursive;
+    font-size: 30px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 2px solid rgb(189, 195, 199);
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: rgb(44, 62, 80);
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background: rgb(236, 240, 241);
+}
+
+.landing {
+   margin-top: 30%;
+}
+
+.landing h1 {
+    font-size: 50px;
+}
+.landing a {
+    margin: 10px;
+}
+/*
+.footer {
+    position: absolute;
+    bottom: 5px;
+}*/

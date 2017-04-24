@@ -1,30 +1,48 @@
 <%include ../partials/header %>
 
-<h1><%=post.title%></h1>
 
-    <h3><%=post.title%></h3>
-    <% if(post.image){ %> <img src="<%=post.image%>" alt="<%= post.title %>"> <%}%>
-    <p><%=post.content%></p>
-    
-    <a href="/index/<%=post._id%>/edit">edit</a>
-    <form action="/index/<%=post._id%>?_method=DELETE" method="post">
-        <input type="submit" value="Delete">
-    </form>
 
+
+<div class="post">
+    <h3 class="title text-center"><%=post.title%></h3>
+    <div class="thumbnail">
+        <% if(post.image){ %>
+            <img src="<%=post.image%>" alt="<%= post.title %>">
+        <%}%>
+        <div class="caption">
+            <p><%=post.content%></p>
+            <p>author<a href="/profile/<%=post.author.id%>"><em> <%=post.author.username%></em></a></p>
+            <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
+                <a href="/index/<%=post._id%>/edit" class="btn btn-info btn-xs">edit</a>
+                <form action="/index/<%=post._id%>?_method=DELETE" method="post">
+                    <input type="submit" value="Delete" class="btn btn-danger btn-xs">
+                </form>
+            <%};%>
+        </div>
+        
+    </div>
+</div>
+        
 <h4>comments</h4>
-<!--add comment-->
-<form action="/index/<%=post._id%>/comments" method="post">
-    <input type="text" name="comment[text]" placeholder="write a comment" required>
-    <input type="submit" value="Post">
-</form>
-
-<% post.comments.forEach(function(comment) { %>
-  <p><a href="/profile/<%=comment.author.id%>"><%=comment.author.username%></a></p>    
-  <p><%=comment.text%></p>
-   
-   <a href="/index/<%=post._id%>/comments/<%=comment._id%>/edit">edit</a>
-   <form action="/index/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="post">
-        <input type="submit" value="Delete">
+<div class="comments">
+   <!--add comment-->
+    <form action="/index/<%=post._id%>/comments" method="post">
+       <div class="form-group">
+        <input type="text" name="comment[text]" placeholder="write a comment" required class="form-control">
+       </div>
     </form>
-<%});%>
+
+    <% post.comments.forEach(function(comment) { %>
+    <div class="comment">
+      <p><a href="/profile/<%=comment.author.id%>"><%=comment.author.username%> </a></p>
+       <p><span><%=comment.text%></span></p>    
+        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <a href="/index/<%=post._id%>/comments/<%=comment._id%>/edit" class="btn btn-info btn-xs">edit</a>
+            <form action="/index/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger btn-xs">
+            </form>
+        <%};%>
+    </div>
+    <%});%>
+</div>
 <%include ../partials/footer %>

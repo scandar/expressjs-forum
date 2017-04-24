@@ -6,13 +6,17 @@
     <title>Page Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Ranga&amp;subset=arabic" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-default">
+<div class="background">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -22,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-                <a class="navbar-brand" href="/">Brand</a>
+                <a class="navbar-brand" href="/">Forum</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +36,8 @@
                         <li><a href="/login">login</a></li>
                         <li><a href="/register">register</a></li>
                     <%} else {%>
-                        <li><a href="/profile/<%= currentUser._id %>">Signed In As <%= currentUser.username %></a></li>
+                        <li><a href="/index/new">new post</a></li>
+                        <li><a href="/profile/<%= currentUser._id %>"><%= currentUser.username %></a></li>
                         <li><a href="/logout">logout</a></li>
                     <%}%>
                 </ul>
@@ -41,3 +46,4 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+<div class="container">

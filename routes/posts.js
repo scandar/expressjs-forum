@@ -24,7 +24,7 @@ router.get("/", function(req, res) {
 
 //new post form
 router.get("/new", middleware.isLoggedIn, function(req, res) {
-   res.render(newRoute); 
+   res.render(newRoute);
 });
 
 //new post route
@@ -59,13 +59,13 @@ router.get("/:id", function(req, res) {
    });
 });
 
-//post edit form 
+//post edit form
 router.get("/:id/edit", middleware.checkUserPost, function(req, res) {
     Post.findById(req.params.id, function(err, foundPost) {
         if(err) {
             console.log(err);
         } else {
-           res.render(edit, {post: foundPost}); 
+           res.render(edit, {post: foundPost});
         }
     })
 });
@@ -77,7 +77,7 @@ router.put("/:id", middleware.checkUserPost, function(req, res) {
        } else {
            res.redirect("/index/" + foundPost._id);
        }
-   }) 
+   })
 });
 
 //destroy route
@@ -88,7 +88,7 @@ router.delete("/:id", middleware.checkUserPost, function(req, res) {
        } else {
            res.redirect("/index");
        }
-   }) 
+   })
 });
 
 
